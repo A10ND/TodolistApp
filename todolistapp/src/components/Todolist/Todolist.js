@@ -17,14 +17,16 @@ function Todolist() {
     }
 
     return (
-        <>
-            <TodolistForm
-                onChange={handleChange}
-                onSubmit={handleSubmit}
-                value={newTodo} />
+        <article>
+            <section>
+                <TodolistForm
+                    onChange={handleChange}
+                    onSubmit={handleSubmit}
+                    value={newTodo} />
 
-            <TodolistView todos={todos} />
-        </>
+                <TodolistView todos={todos} />
+            </section>
+        </article>
     )
 };
 
