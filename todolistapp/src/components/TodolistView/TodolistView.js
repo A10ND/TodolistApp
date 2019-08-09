@@ -7,12 +7,14 @@ function TodolistView(props) {
     <ul>
       {props.todos.map((todoData, index) => {
         return (
-          <TodolistItem
-            key={index}
-            index={index}
-            onDelete={props.onDelete}
-            data={todoData}
-          />
+          <div>
+            <TodolistItem
+              key={index}
+              index={index}
+              onDelete={props.onDelete}
+              data={todoData}
+            />
+          </div>
         );
       })}
     </ul>

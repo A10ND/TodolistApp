@@ -3,15 +3,16 @@ import PropTypes from "prop-types";
 
 function TodolistItem(props) {
   return (
-    <li key={props.index}>
-      {props.data}
+    <div>
+      <li key={props.index}>{props.data}</li>
+
       <button
         className="btn btn-primary"
         onClick={() => props.onDelete(props.index)}
       >
         Delete Todo
       </button>
-    </li>
+    </div>
   );
 }
 

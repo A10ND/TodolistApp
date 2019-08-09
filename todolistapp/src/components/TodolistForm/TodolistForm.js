@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function TodolistForm(props) {
   return (
-    <div className="form-group">
+    <div className="TodolistForm">
       <label htmlFor="todoToAddText">Add New Todo</label>
       <form onSubmit={props.onSubmit}>
         <div className="form-group">
