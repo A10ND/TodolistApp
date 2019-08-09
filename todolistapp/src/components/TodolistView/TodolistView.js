@@ -1,13 +1,20 @@
-import React from 'react';
+import React from "react";
+import TodolistItem from "../TodolistItem";
 
 function TodolistView(props) {
-    return (
-        <ul>
-            {props.todos.map((todo, index) => {
-                return <li key={index}>{todo}</li>
-            })}
-        </ul>
-    );
-};
+  return (
+    <ul>
+      {props.todos.map((todoData, index) => {
+        return (
+          <TodolistItem
+            index={index}
+            onDelete={props.onDelete}
+            data={todoData}
+          />
+        );
+      })}
+    </ul>
+  );
+}
 
 export default TodolistView;

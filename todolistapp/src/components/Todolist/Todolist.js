@@ -1,33 +1,38 @@
-import React, { useState } from 'react';
-import TodolistForm from '../TodolistForm';
-import TodolistView from '../TodolistView';
+import React, { useState } from "react";
+import TodolistForm from "../TodolistForm";
+import TodolistView from "../TodolistView";
 
 function Todolist() {
-    const [newTodo, setNewTodo] = useState('');
-    const [todos, setTodos] = useState([]);
+  const [newTodo, setNewTodo] = useState("");
+  const [todos, setTodos] = useState([]);
 
-    function handleChange(event) {
-        setNewTodo(event.target.value);
-    }
+  function handleChange(event) {
+    setNewTodo(event.target.value);
+  }
 
-    function handleSubmit(event) {
-        event.preventDefault();
-        setTodos(todos => todos.concat(newTodo));
-        setNewTodo('');
-    }
+  function handleSubmit(event) {
+    event.preventDefault();
+    setTodos(todos => todos.concat(newTodo));
+    setNewTodo("");
+  }
 
-    return (
-        <article>
-            <section>
-                <TodolistForm
-                    onChange={handleChange}
-                    onSubmit={handleSubmit}
-                    value={newTodo} />
+  function handleDelete(event) {
+    event.preventDefault();
+    alert("Deleting Todo...");
+  }
+  return (
+    <article>
+      <section>
+        <TodolistForm
+          onChange={handleChange}
+          onSubmit={handleSubmit}
+          value={newTodo}
+        />
 
-                <TodolistView todos={todos} />
-            </section>
-        </article>
-    )
-};
+        <TodolistView todos={todos} onDelete={handleDelete} />
+      </section>
+    </article>
+  );
+}
 
 export default Todolist;
