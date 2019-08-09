@@ -16,9 +16,10 @@ function Todolist() {
     setNewTodo("");
   }
 
-  function handleDelete(event) {
-    event.preventDefault();
-    alert("Deleting Todo...");
+  function handleDelete(todoIndex) {
+    let newTodos = [...todos];
+    newTodos.splice(todoIndex, 1);
+    setTodos(newTodos);
   }
   return (
     <article>
