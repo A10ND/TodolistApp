@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function TodolistForm(props) {
   return (
@@ -23,5 +24,11 @@ function TodolistForm(props) {
     </div>
   );
 }
+
+TodolistForm.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired
+};
 
 export default TodolistForm;
